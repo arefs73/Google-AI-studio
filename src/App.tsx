@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ServicesSection } from './components/ServicesSection';
@@ -15,6 +15,11 @@ export default function App() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [quoteServiceId, setQuoteServiceId] = useState<string | undefined>(undefined);
   const [quoteProjectTitle, setQuoteProjectTitle] = useState<string | undefined>(undefined);
+
+  useEffect(() => {
+    // Ensure initial page view starts at the very top of the website
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleOpenQuoteModal = (serviceId?: string) => {
     setQuoteServiceId(serviceId);

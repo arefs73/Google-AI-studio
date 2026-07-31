@@ -46,14 +46,22 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [isExpandedWidget, setIsExpandedWidget] = useState(false);
 
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const mainChatContainerRef = useRef<HTMLDivElement>(null);
+  const floatingChatContainerRef = useRef<HTMLDivElement>(null);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    scrollToBottom();
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+
+    if (mainChatContainerRef.current) {
+      mainChatContainerRef.current.scrollTop = mainChatContainerRef.current.scrollHeight;
+    }
+    if (floatingChatContainerRef.current) {
+      floatingChatContainerRef.current.scrollTop = floatingChatContainerRef.current.scrollHeight;
+    }
   }, [messages, isLoading]);
 
   const handleSendMessage = async (textToSend?: string) => {
@@ -200,7 +208,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
             </div>
 
             {/* Message Area */}
-            <div className="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-4 bg-zinc-950">
+            <div ref={mainChatContainerRef} className="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-4 bg-zinc-950">
               {messages.map((m) => (
                 <div
                   key={m.id}
@@ -244,8 +252,6 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
                   </div>
                 </div>
               )}
-
-              <div ref={messagesEndRef} />
             </div>
 
             {/* Input Box */}
@@ -322,7 +328,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
           </div>
 
           {/* Floating Chat Body */}
-          <div className="flex-1 p-3 overflow-y-auto custom-scrollbar space-y-3 bg-zinc-950">
+          <div ref={floatingChatContainerRef} className="flex-1 p-3 overflow-y-auto custom-scrollbar space-y-3 bg-zinc-950">
             {messages.map((m) => (
               <div
                 key={m.id}
@@ -364,8 +370,6 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
                 </div>
               </div>
             )}
-
-            <div ref={messagesEndRef} />
           </div>
 
           {/* Floating Form Input */}
