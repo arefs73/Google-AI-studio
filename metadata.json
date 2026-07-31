@@ -1,0 +1,6 @@
+{
+  "name": "RF Craft",
+  "description": "RF Craft - Data analytics, IT infrastructure, custom web engineering, computer data processing, and AI solutions by Aref Soleymani (KvK: 99957922).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
