@@ -3,22 +3,25 @@ import { Service, SkillCategory, ProjectItem } from '../types';
 export const SERVICES_DATA: Service[] = [
   {
     id: 'web-design',
-    title: 'Web Engineering & Enterprise Portals',
-    shortDesc: 'Modern, fast, and responsive web application development using cutting-edge technologies like React, Next.js, and Node.js.',
-    fullDesc: 'We design and build scalable enterprise web platforms and web apps with full SEO optimization, ultra-fast performance, rock-solid security, and captivating UX. From corporate platforms to complex e-commerce solutions with payment gateways.',
+    title: 'Web Engineering & WordPress Development',
+    shortDesc: 'Custom web application engineering (React, Next.js) and hands-on WordPress development, from custom builds and plugin creation to full-site maintenance.',
+    fullDesc: 'We deliver end-to-end web software engineering and enterprise WordPress solutions. From custom web platforms to multilingual WordPress architectures, custom plugins, WooCommerce store management, and high-performance site maintenance.',
     iconName: 'Globe',
-    gradient: 'from-cyan-500 to-blue-600',
+    gradient: 'from-teal-600 to-cyan-600',
     features: [
-      'Fully responsive & fluid mobile-first architecture',
-      'Technical SEO mastery & high Google ranking performance',
-      'Custom administrative content management dashboard',
-      'Enterprise security & DDoS attack prevention',
-      'API integration with CRM, ERP, & payment gateways'
+      'WordPress Developer with hands-on experience, from custom builds to full-site maintenance',
+      'Delivered & maintained multilingual WordPress sites (Persian/Arabic/English) for international brands across UAE, Saudi Arabia, Qatar, Kuwait, and Canada',
+      'Custom WordPress plugin & theme development tailored to specific business requirements',
+      'Full WooCommerce store development, custom payment gateways, and inventory management',
+      'Performance optimization at scale — supported 50+ live WordPress sites simultaneously',
+      'Strong grasp of software engineering principles (OOP, SOLID, Clean Architecture) for maintainable code',
+      'Proficient in PHP, JavaScript, jQuery, AJAX, HTML5/CSS3/SCSS, Figma (UI/UX), & Google Analytics',
+      'Experienced working remotely with distributed, multinational teams'
     ],
-    technologies: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
-    deliverables: ['Custom UI/UX Design System', 'Clean Optimized Codebase', 'Admin Dashboard Training', '1 Year SLA Warranty & Support'],
+    technologies: ['WordPress', 'PHP', 'WooCommerce', 'React.js', 'Next.js', 'JavaScript', 'jQuery', 'AJAX', 'Tailwind CSS', 'Figma', 'Google Analytics'],
+    deliverables: ['Custom Plugin & Theme Build', 'Multilingual Setup (EN/AR/FA)', 'WooCommerce E-Commerce Store', 'Performance Optimization (50+ Sites)', 'Figma UI/UX & Analytics Integration', 'Ongoing Maintenance SLA'],
     estimatedTime: '2 to 4 Weeks',
-    startingPrice: 'From $1,500'
+    startingPrice: 'From $1,200'
   },
   {
     id: 'ai-solutions',
@@ -86,9 +89,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: 'Mastery over modern web frameworks, typed architectures, and cloud services.',
     skills: [
       { name: 'React.js & Next.js', level: 96, experienceYears: '6+ Years', description: 'Enterprise SPA platforms, SSR rendering, and micro-frontends' },
+      { name: 'WordPress & PHP (Plugins/Themes/WooCommerce)', level: 95, experienceYears: '6+ Years', description: 'Custom plugins, multilingual sites (EN/AR/FA), WooCommerce, OOP/SOLID principles, 50+ sites supported' },
       { name: 'Node.js & Express / Python FastAPI', level: 92, experienceYears: '5+ Years', description: 'Microservices architecture and high-throughput REST APIs' },
-      { name: 'TypeScript', level: 95, experienceYears: '5+ Years', description: 'Type-safe functional coding with zero runtime exceptions' },
-      { name: 'PostgreSQL & MongoDB', level: 88, experienceYears: '6+ Years', description: 'Relational database schema optimization and NoSQL storage' }
+      { name: 'TypeScript & JavaScript (jQuery/AJAX)', level: 95, experienceYears: '5+ Years', description: 'Type-safe functional coding, interactive frontend logic, and clean architecture' }
     ]
   },
   {

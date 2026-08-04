@@ -130,41 +130,41 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
   return (
     <>
       {/* 1. Dedicated Page Section for Online Support (#support) */}
-      <section id="support" className="py-20 bg-zinc-900 relative overflow-hidden border-t border-zinc-800">
+      <section id="support" className="py-20 bg-slate-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto mb-12">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-950 border border-zinc-800 text-teal-400 text-xs font-medium uppercase tracking-widest">
-              <Headphones className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-teal-700 text-xs font-semibold uppercase tracking-widest shadow-sm">
+              <Headphones className="w-4 h-4 text-teal-600" />
               <span>Instant AI Support & Consultation</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-zinc-100 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
               RF Craft Intelligent AI Assistant
             </h2>
-            <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-              Ask questions regarding timelines, tech stack, data analytics, pricing estimates, and project scope. Our AI assistant is available 24/7 for instant inquiries.
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Ask questions regarding timelines, tech stack, data analytics, WordPress solutions, pricing estimates, and project scope. Our AI assistant is available 24/7.
             </p>
           </div>
 
           {/* Embedded Large Chat Interface */}
-          <div className="max-w-4xl mx-auto bg-zinc-950 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl flex flex-col h-[580px]">
+          <div className="max-w-4xl mx-auto bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-xl flex flex-col h-[580px]">
             
             {/* Header */}
-            <div className="p-4 sm:p-5 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between">
+            <div className="p-4 sm:p-5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
-                  <Bot className="w-5 h-5 text-teal-400" />
-                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-teal-400 border-2 border-zinc-900" />
+                <div className="relative w-10 h-10 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center">
+                  <Bot className="w-5 h-5 text-teal-600" />
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-teal-600 border-2 border-white" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-serif font-bold text-zinc-100 flex items-center gap-1.5">
+                  <h3 className="text-sm font-serif font-bold text-slate-900 flex items-center gap-1.5">
                     RF Craft Support Assistant
-                    <span className="text-[10px] bg-zinc-950 text-teal-400 px-2 py-0.5 rounded border border-zinc-800 font-mono">
+                    <span className="text-[10px] bg-teal-50 text-teal-800 px-2 py-0.5 rounded border border-teal-200 font-mono">
                       Gemini AI
                     </span>
                   </h3>
-                  <span className="text-xs text-teal-400 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                  <span className="text-xs text-teal-700 flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse" />
                     Online & Ready 24/7
                   </span>
                 </div>
@@ -173,7 +173,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
               <div className="flex items-center gap-2">
                 <button
                   onClick={clearHistory}
-                  className="p-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-zinc-400 hover:text-white text-xs flex items-center gap-1 border border-zinc-800"
+                  className="p-2 rounded-xl bg-white hover:bg-slate-100 text-slate-600 hover:text-slate-900 text-xs flex items-center gap-1 border border-slate-200"
                   title="Reset Chat"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
@@ -181,18 +181,18 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
                 </button>
                 <a
                   href="tel:+31614167492"
-                  className="px-3 py-2 rounded-xl bg-teal-500/10 hover:bg-teal-500/20 text-teal-400 border border-teal-500/20 text-xs font-semibold flex items-center gap-1.5"
+                  className="px-3 py-2 rounded-xl bg-teal-50 hover:bg-teal-100 text-teal-800 border border-teal-200 text-xs font-semibold flex items-center gap-1.5"
                 >
-                  <PhoneCall className="w-3.5 h-3.5" />
+                  <PhoneCall className="w-3.5 h-3.5 text-teal-600" />
                   <span>Call Us: +31 6 14167492</span>
                 </a>
               </div>
             </div>
 
             {/* Quick Suggestion Chips */}
-            <div className="p-3 bg-zinc-900/60 border-b border-zinc-800/80 overflow-x-auto custom-scrollbar flex items-center gap-2">
-              <span className="text-[11px] text-zinc-400 font-semibold shrink-0 flex items-center gap-1">
-                <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+            <div className="p-3 bg-slate-50/80 border-b border-slate-200 overflow-x-auto custom-scrollbar flex items-center gap-2">
+              <span className="text-[11px] text-slate-500 font-semibold shrink-0 flex items-center gap-1">
+                <Sparkles className="w-3.5 h-3.5 text-teal-600" />
                 Quick Prompts:
               </span>
               {PRESET_QUESTIONS.map((q, idx) => (
@@ -200,7 +200,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
                   key={idx}
                   onClick={() => handleSendMessage(q)}
                   disabled={isLoading}
-                  className="px-3 py-1.5 rounded-full bg-zinc-950 hover:bg-zinc-800 text-zinc-300 hover:text-teal-400 text-xs border border-zinc-800 whitespace-nowrap transition-colors"
+                  className="px-3 py-1.5 rounded-full bg-white hover:bg-slate-100 text-slate-700 hover:text-teal-700 text-xs border border-slate-200 whitespace-nowrap transition-colors shadow-xs"
                 >
                   {q}
                 </button>
@@ -208,7 +208,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
             </div>
 
             {/* Message Area */}
-            <div ref={mainChatContainerRef} className="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-4 bg-zinc-950">
+            <div ref={mainChatContainerRef} className="flex-1 p-4 sm:p-6 overflow-y-auto custom-scrollbar space-y-4 bg-slate-50/50">
               {messages.map((m) => (
                 <div
                   key={m.id}
@@ -219,22 +219,22 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
                   <div
                     className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
                       m.sender === 'user'
-                        ? 'bg-teal-500 text-zinc-950 font-bold'
-                        : 'bg-teal-500/10 text-teal-400 border border-teal-500/20'
+                        ? 'bg-teal-600 text-white font-bold'
+                        : 'bg-teal-50 text-teal-700 border border-teal-200'
                     }`}
                   >
                     {m.sender === 'user' ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
                   </div>
 
                   <div
-                    className={`max-w-[80%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed space-y-1 shadow-md ${
+                    className={`max-w-[80%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed space-y-1 shadow-sm ${
                       m.sender === 'user'
-                        ? 'bg-teal-500 text-zinc-950 font-medium rounded-br-none'
-                        : 'bg-zinc-900 border border-zinc-800 text-zinc-200 rounded-bl-none'
+                        ? 'bg-teal-600 text-white font-medium rounded-br-none'
+                        : 'bg-white border border-slate-200 text-slate-800 rounded-bl-none'
                     }`}
                   >
                     <p className="whitespace-pre-line text-left">{m.text}</p>
-                    <span className="text-[10px] text-zinc-400 block text-right font-mono pt-1 opacity-70">
+                    <span className={`text-[10px] block text-right font-mono pt-1 opacity-70 ${m.sender === 'user' ? 'text-teal-100' : 'text-slate-400'}`}>
                       {m.timestamp}
                     </span>
                   </div>
@@ -243,11 +243,11 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
 
               {isLoading && (
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-teal-500/10 text-teal-400 border border-teal-500/20 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-xl bg-teal-50 text-teal-700 border border-teal-200 flex items-center justify-center">
                     <Bot className="w-4 h-4" />
                   </div>
-                  <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-4 text-xs text-teal-400 flex items-center gap-2">
-                    <Loader2 className="w-4 h-4 animate-spin" />
+                  <div className="bg-white border border-slate-200 rounded-2xl p-4 text-xs text-teal-700 flex items-center gap-2">
+                    <Loader2 className="w-4 h-4 animate-spin text-teal-600" />
                     <span>Analyzing request and generating reply...</span>
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
             </div>
 
             {/* Input Box */}
-            <div className="p-3 sm:p-4 bg-zinc-900 border-t border-zinc-800">
+            <div className="p-3 sm:p-4 bg-white border-t border-slate-200">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -269,12 +269,12 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
                   onChange={(e) => setInput(e.target.value)}
                   placeholder="Ask a question about pricing, services, or technical stack..."
                   disabled={isLoading}
-                  className="flex-1 bg-zinc-950 border border-zinc-800 focus:border-teal-500 rounded-xl px-4 py-3 text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 outline-none transition-colors"
+                  className="flex-1 bg-slate-50 border border-slate-200 focus:border-teal-600 rounded-xl px-4 py-3 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none transition-colors"
                 />
                 <button
                   type="submit"
                   disabled={isLoading || !input.trim()}
-                  className="px-5 py-3 rounded-xl bg-teal-500 hover:bg-teal-600 disabled:opacity-50 text-zinc-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md transition-all shrink-0"
+                  className="px-5 py-3 rounded-xl bg-teal-600 hover:bg-teal-700 disabled:opacity-50 text-white font-bold text-xs sm:text-sm flex items-center gap-2 shadow-md shadow-teal-600/20 transition-all shrink-0"
                 >
                   <span>Send</span>
                   <Send className="w-4 h-4" />
@@ -290,36 +290,36 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
       {/* 2. Floating Persistent Widget (Bottom-Right corner) */}
       {isOpenFloating && (
         <div
-          className={`fixed bottom-6 right-6 z-50 bg-zinc-950 border border-zinc-800 rounded-3xl shadow-2xl overflow-hidden flex flex-col transition-all duration-300 animate-in slide-in-from-bottom-5 ${
+          className={`fixed bottom-6 right-6 z-50 bg-white border border-slate-200/90 rounded-3xl shadow-2xl overflow-hidden flex flex-col transition-all duration-300 animate-in slide-in-from-bottom-5 ${
             isExpandedWidget
               ? 'w-[92vw] sm:w-[480px] h-[600px]'
               : 'w-[92vw] sm:w-[380px] h-[500px]'
           }`}
         >
           {/* Floating Header */}
-          <div className="p-3.5 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between">
+          <div className="p-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <div className="relative w-8 h-8 rounded-lg bg-teal-500/10 border border-teal-500/20 flex items-center justify-center">
-                <Bot className="w-4 h-4 text-teal-400" />
-                <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-teal-400" />
+              <div className="relative w-8 h-8 rounded-lg bg-teal-50 border border-teal-200 flex items-center justify-center">
+                <Bot className="w-4 h-4 text-teal-600" />
+                <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-teal-600" />
               </div>
               <div>
-                <h4 className="text-xs font-serif font-bold text-zinc-100">RF Craft AI Support</h4>
-                <span className="text-[10px] text-teal-400">Instant AI Responses</span>
+                <h4 className="text-xs font-serif font-bold text-slate-900">RF Craft AI Support</h4>
+                <span className="text-[10px] text-teal-700">Instant AI Responses</span>
               </div>
             </div>
 
             <div className="flex items-center gap-1">
               <button
                 onClick={() => setIsExpandedWidget(!isExpandedWidget)}
-                className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800"
+                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-200/60"
                 title={isExpandedWidget ? 'Minimize' : 'Maximize'}
               >
                 {isExpandedWidget ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
               </button>
               <button
                 onClick={onCloseFloating}
-                className="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-800"
+                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-200/60"
                 title="Close"
               >
                 <X className="w-4 h-4" />
@@ -328,7 +328,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
           </div>
 
           {/* Floating Chat Body */}
-          <div ref={floatingChatContainerRef} className="flex-1 p-3 overflow-y-auto custom-scrollbar space-y-3 bg-zinc-950">
+          <div ref={floatingChatContainerRef} className="flex-1 p-3 overflow-y-auto custom-scrollbar space-y-3 bg-slate-50/50">
             {messages.map((m) => (
               <div
                 key={m.id}
@@ -338,21 +338,21 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
               >
                 <div
                   className={`w-7 h-7 rounded-lg flex items-center justify-center shrink-0 ${
-                    m.sender === 'user' ? 'bg-teal-500 text-zinc-950 font-bold' : 'bg-teal-500/10 text-teal-400'
+                    m.sender === 'user' ? 'bg-teal-600 text-white font-bold' : 'bg-teal-50 text-teal-700 border border-teal-200'
                   }`}
                 >
                   {m.sender === 'user' ? <User className="w-3.5 h-3.5" /> : <Bot className="w-3.5 h-3.5" />}
                 </div>
 
                 <div
-                  className={`max-w-[85%] rounded-xl p-3 text-xs leading-relaxed space-y-1 ${
+                  className={`max-w-[85%] rounded-xl p-3 text-xs leading-relaxed space-y-1 shadow-xs ${
                     m.sender === 'user'
-                      ? 'bg-teal-500 text-zinc-950 font-medium rounded-br-none'
-                      : 'bg-zinc-900 border border-zinc-800 text-zinc-200 rounded-bl-none'
+                      ? 'bg-teal-600 text-white font-medium rounded-br-none'
+                      : 'bg-white border border-slate-200 text-slate-800 rounded-bl-none'
                   }`}
                 >
                   <p className="whitespace-pre-line text-left">{m.text}</p>
-                  <span className="text-[9px] text-zinc-400 block text-right font-mono opacity-70">
+                  <span className={`text-[9px] block text-right font-mono opacity-70 ${m.sender === 'user' ? 'text-teal-100' : 'text-slate-400'}`}>
                     {m.timestamp}
                   </span>
                 </div>
@@ -361,11 +361,11 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
 
             {isLoading && (
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center">
+                <div className="w-7 h-7 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center">
                   <Bot className="w-3.5 h-3.5" />
                 </div>
-                <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-2.5 text-xs text-teal-400 flex items-center gap-1.5">
-                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                <div className="bg-white border border-slate-200 rounded-xl p-2.5 text-xs text-teal-700 flex items-center gap-1.5">
+                  <Loader2 className="w-3.5 h-3.5 animate-spin text-teal-600" />
                   <span>Thinking...</span>
                 </div>
               </div>
@@ -373,7 +373,7 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
           </div>
 
           {/* Floating Form Input */}
-          <div className="p-2.5 bg-zinc-900 border-t border-zinc-800">
+          <div className="p-2.5 bg-white border-t border-slate-200">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -387,12 +387,12 @@ export const OnlineSupportWidget: React.FC<OnlineSupportWidgetProps> = ({
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your question..."
                 disabled={isLoading}
-                className="flex-1 bg-zinc-950 border border-zinc-800 focus:border-teal-500 rounded-xl px-3 py-2 text-xs text-zinc-100 placeholder-zinc-500 outline-none"
+                className="flex-1 bg-slate-50 border border-slate-200 focus:border-teal-600 rounded-xl px-3 py-2 text-xs text-slate-900 placeholder-slate-400 outline-none"
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
-                className="p-2 rounded-xl bg-teal-500 text-zinc-950 disabled:opacity-50 hover:bg-teal-600 font-bold"
+                className="p-2 rounded-xl bg-teal-600 text-white disabled:opacity-50 hover:bg-teal-700 font-bold shadow-sm"
               >
                 <Send className="w-4 h-4" />
               </button>
