@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenSupport, onOpenQuo
       <div className="absolute top-40 left-1/4 w-80 h-80 bg-emerald-100/40 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center lg:-ml-[70px] lg:-mr-[56px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center lg:-ml-[70px] lg:-mr-[56px] lg:-mt-[56px] p-0">
           
           {/* Left Column: Structured & Organized Content */}
           <div className="lg:col-span-7 flex flex-col space-y-8 order-last lg:order-none mt-10 lg:mt-0">
