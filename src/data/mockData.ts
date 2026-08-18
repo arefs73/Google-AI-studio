@@ -4,22 +4,23 @@ export const SERVICES_DATA: Service[] = [
   {
     id: 'web-design',
     title: 'Web Engineering & WordPress Development',
-    shortDesc: 'Custom web application engineering (React, Next.js) and hands-on WordPress development, from custom builds and plugin creation to full-site maintenance.',
-    fullDesc: 'We deliver end-to-end web software engineering and enterprise WordPress solutions. From custom web platforms to multilingual WordPress architectures, custom plugins, WooCommerce store management, and high-performance site maintenance.',
+    shortDesc: 'Custom web application engineering (React, Next.js), Element page builder design, and hands-on WordPress development, from custom builds and plugin creation to full-site maintenance.',
+    fullDesc: 'We deliver end-to-end web software engineering, Element page builder design, and enterprise WordPress solutions. From custom web platforms to multilingual WordPress architectures, custom plugins, WooCommerce store management, and high-performance site maintenance.',
     iconName: 'Globe',
     gradient: 'from-teal-600 to-cyan-600',
     features: [
-      'WordPress Developer with hands-on experience, from custom builds to full-site maintenance',
+      'WordPress & Element Developer with hands-on experience, from custom builds to full-site maintenance',
+      'Elementor Page Builder custom layout design, responsive styling & custom widget development',
       'Delivered & maintained multilingual WordPress sites (Persian/Arabic/English) for international brands across UAE, Saudi Arabia, Qatar, Kuwait, and Canada',
       'Custom WordPress plugin & theme development tailored to specific business requirements',
       'Full WooCommerce store development, custom payment gateways, and inventory management',
       'Performance optimization at scale — supported 50+ live WordPress sites simultaneously',
       'Strong grasp of software engineering principles (OOP, SOLID, Clean Architecture) for maintainable code',
-      'Proficient in PHP, JavaScript, jQuery, AJAX, HTML5/CSS3/SCSS, Figma (UI/UX), & Google Analytics',
+      'Proficient in Element, Elementor, PHP, JavaScript, jQuery, AJAX, HTML5/CSS3/SCSS, Figma (UI/UX), & Google Analytics',
       'Experienced working remotely with distributed, multinational teams'
     ],
-    technologies: ['WordPress', 'PHP', 'WooCommerce', 'React.js', 'Next.js', 'JavaScript', 'jQuery', 'AJAX', 'Tailwind CSS', 'Figma', 'Google Analytics'],
-    deliverables: ['Custom Plugin & Theme Build', 'Multilingual Setup (EN/AR/FA)', 'WooCommerce E-Commerce Store', 'Performance Optimization (50+ Sites)', 'Figma UI/UX & Analytics Integration', 'Ongoing Maintenance SLA'],
+    technologies: [ 'Elementor', 'WordPress', 'PHP', 'WooCommerce', 'React.js', 'Next.js', 'JavaScript', 'jQuery', 'AJAX', 'Tailwind CSS', 'Figma', 'Google Analytics'],
+    deliverables: ['Custom Elementor Layouts & Widgets', 'Custom Plugin & Theme Build', 'Multilingual Setup (EN/AR/FA)', 'WooCommerce E-Commerce Store', 'Performance Optimization (50+ Sites)', 'Figma UI/UX & Analytics Integration', 'Ongoing Maintenance SLA'],
     estimatedTime: '2 to 4 Weeks',
     startingPrice: 'From $1,200'
   },
@@ -89,7 +90,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     description: 'Mastery over modern web frameworks, typed architectures, and cloud services.',
     skills: [
       { name: 'React.js & Next.js', level: 96, experienceYears: '6+ Years', description: 'Enterprise SPA platforms, SSR rendering, and micro-frontends' },
-      { name: 'WordPress & PHP (Plugins/Themes/WooCommerce)', level: 95, experienceYears: '6+ Years', description: 'Custom plugins, multilingual sites (EN/AR/FA), WooCommerce, OOP/SOLID principles, 50+ sites supported' },
+      { name: 'WordPress, Element & PHP (Plugins/Themes/WooCommerce)', level: 95, experienceYears: '6+ Years', description: 'Elementor custom layouts, plugins, multilingual sites (EN/AR/FA), WooCommerce, OOP/SOLID principles, 50+ sites supported' },
       { name: 'Node.js & Express / Python FastAPI', level: 92, experienceYears: '5+ Years', description: 'Microservices architecture and high-throughput REST APIs' },
       { name: 'TypeScript & JavaScript (jQuery/AJAX)', level: 95, experienceYears: '5+ Years', description: 'Type-safe functional coding, interactive frontend logic, and clean architecture' }
     ]

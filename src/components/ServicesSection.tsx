@@ -13,7 +13,8 @@ import {
   Sparkles,
   ChevronDown,
   Layers,
-  Zap
+  Zap,
+  Wrench
 } from 'lucide-react';
 
 interface ServicesSectionProps {
@@ -134,17 +135,30 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                 </div>
 
                 {/* Technologies Badge Chips */}
-                <div className="space-y-2 pt-2">
-                  <span className="text-xs text-slate-500 uppercase tracking-widest font-bold block">Tech Stack & Tools:</span>
+                <div className="space-y-3 pt-3 border-t border-slate-200/80">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-md bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-700 shadow-xs">
+                      <Wrench className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="text-xs text-slate-700 uppercase tracking-widest font-bold">Tech Stack & Tools:</span>
+                  </div>
                   <div className="flex flex-wrap gap-2">
-                    {activeService.technologies.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 rounded-lg bg-teal-50 border border-teal-200/80 text-teal-800 font-mono text-xs font-semibold"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {activeService.technologies.map((tech, idx) => {
+                      const isElement = tech.toLowerCase().includes('element');
+                      return (
+                        <span
+                          key={idx}
+                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all duration-150 ${
+                            isElement
+                              ? 'bg-teal-100/80 border border-teal-300 text-teal-950 shadow-xs'
+                              : 'bg-slate-50 border border-slate-200 text-slate-800 shadow-2xs hover:border-teal-500 hover:bg-teal-50/60 hover:text-teal-900'
+                          }`}
+                        >
+                          <span className={`w-1.5 h-1.5 rounded-full ${isElement ? 'bg-teal-700 animate-pulse' : 'bg-teal-600'}`} />
+                          {tech}
+                        </span>
+                      );
+                    })}
                   </div>
                 </div>
               </div>

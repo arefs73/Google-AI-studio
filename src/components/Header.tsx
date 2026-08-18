@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Menu, X, Phone, MessageSquare, ChevronRight, Sparkles } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface HeaderProps {
+  activePage: string;
+  onNavigate: (page: string) => void;
   onOpenSupport: () => void;
   onOpenQuoteModal: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenSupport, onOpenQuoteModal }) => {
+export const Header: React.FC<HeaderProps> = ({ activePage, onNavigate, onOpenSupport, onOpenQuoteModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -23,30 +26,35 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSupport, onOpenQuoteModal 
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'Services', href: '#services' },
-    { name: 'Expertise', href: '#skills' },
-    { name: 'Projects', href: '#gallery' },
-    { name: 'AI Support', href: '#support' },
-    { name: 'Contact & Map', href: '#contact' },
+    { id: 'home', name: 'Home', href: '#home' },
+    { id: 'services', name: 'Services', href: '#services' },
+    { id: 'skills', name: 'Expertise', href: '#skills' },
+    { id: 'gallery', name: 'Projects', href: '#gallery' },
+    { id: 'contact', name: 'Contact & Map', href: '#contact' },
   ];
+
+  const handleNavClick = (e: React.MouseEvent, pageId: string) => {
+    e.preventDefault();
+    onNavigate(pageId);
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 min-h-[87px] flex items-center ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-3'
-          : 'bg-white/80 backdrop-blur-sm border-b border-slate-200/60 py-4'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-2'
+          : 'bg-white/90 backdrop-blur-sm border-b border-slate-200/80 py-3'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-between">
           {/* Logo & Brand Name */}
-          <a href="#hero" className="flex items-center gap-3 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-teal-600 text-white font-bold shadow-md shadow-teal-600/20 group-hover:scale-105 transition-transform duration-300">
-              <Shield className="w-5 h-5 text-white" />
+          <a href="#home" onClick={(e) => handleNavClick(e, 'home')} className="flex items-center gap-3.5 group">
+            <div className="relative flex items-center justify-center w-[70px] h-[70px] -mt-[7px] mx-0 rounded-2xl bg-white border border-teal-200/90 overflow-hidden shadow-xs group-hover:scale-105 group-hover:border-teal-400 transition-all duration-300 p-1">
+              <Logo className="w-full h-full" />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col text-left">
               <span className="text-xl sm:text-2xl font-serif font-bold tracking-tight text-slate-900 flex items-center gap-2">
                 RF Craft
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-200 font-sans font-semibold">
@@ -59,17 +67,25 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSupport, onOpenQuoteModal 
             </div>
           </a>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold uppercase tracking-widest text-slate-600">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="hover:text-teal-600 transition-colors py-1"
-              >
-                {link.name}
-              </a>
-            ))}
+          {/* Desktop Navigation Links (Multi-page tabs) */}
+          <nav className="hidden lg:flex items-center gap-1.5 p-1 rounded-2xl bg-slate-100/80 border border-slate-200/80">
+            {navLinks.map((link) => {
+              const isActive = activePage === link.id;
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all duration-200 ${
+                    isActive
+                      ? 'bg-teal-600 text-white shadow-xs'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-200/60'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
           </nav>
 
           {/* Actions & Buttons */}
@@ -131,17 +147,24 @@ export const Header: React.FC<HeaderProps> = ({ onOpenSupport, onOpenQuoteModal 
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white/98 border-b border-slate-200 px-4 pt-4 pb-6 space-y-3 mt-2 backdrop-blur-xl animate-in slide-in-from-top duration-200 shadow-lg">
           <div className="flex flex-col space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between px-4 py-3 rounded-xl text-xs font-medium text-slate-700 hover:bg-slate-100 hover:text-teal-600 transition-colors"
-              >
-                <span>{link.name}</span>
-                <ChevronRight className="w-4 h-4 text-slate-400" />
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activePage === link.id;
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.id)}
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold transition-colors ${
+                    isActive
+                      ? 'bg-teal-50 text-teal-800 border border-teal-200'
+                      : 'text-slate-700 hover:bg-slate-100 hover:text-teal-600'
+                  }`}
+                >
+                  <span>{link.name}</span>
+                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                </a>
+              );
+            })}
           </div>
 
           <div className="pt-3 border-t border-slate-200 flex flex-col gap-2">

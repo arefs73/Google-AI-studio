@@ -1,8 +1,21 @@
 import React from 'react';
 import { Shield, Phone, Mail, MapPin, Heart, Sparkles, FileText, User, Building, CheckCircle2 } from 'lucide-react';
+import { Logo } from './Logo';
 import { OFFICE_LOCATION } from '../data/mockData';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate?: (page: string) => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const handleNav = (e: React.MouseEvent, pageId: string) => {
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate(pageId);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer className="bg-white border-t border-slate-200 text-slate-600 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -11,8 +24,8 @@ export const Footer: React.FC = () => {
           {/* Brand Info */}
           <div className="lg:col-span-4 space-y-4 text-left">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-600">
-                <Shield className="w-5 h-5" />
+              <div className="w-11 h-11 rounded-xl bg-white border border-teal-200 overflow-hidden flex items-center justify-center p-0.5 shadow-2xs">
+                <Logo className="w-full h-full" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-serif font-bold text-slate-900">RF Craft</span>
@@ -21,7 +34,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-slate-600 leading-relaxed font-normal">
-              RF Craft specializes in data analytics, computer infrastructure engineering, custom web applications, WordPress solutions, and AI integrations for forward-thinking organizations.
+              RF Craft specializes in data analytics, computer infrastructure engineering, custom web applications, WordPress & Elementor solutions, and AI integrations for forward-thinking organizations.
             </p>
 
             <div className="flex items-center gap-2 pt-1 text-[11px] text-teal-700 font-medium">
@@ -34,12 +47,12 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-3 text-left">
             <h4 className="text-sm font-serif font-bold text-slate-900">Quick Links</h4>
             <ul className="space-y-2">
-              <li><a href="#hero" className="hover:text-teal-700 transition-colors">Home</a></li>
-              <li><a href="#services" className="hover:text-teal-700 transition-colors">Services</a></li>
-              <li><a href="#skills" className="hover:text-teal-700 transition-colors">Tech Stack</a></li>
-              <li><a href="#gallery" className="hover:text-teal-700 transition-colors">Portfolio</a></li>
-              <li><a href="#support" className="hover:text-teal-700 transition-colors">AI Support</a></li>
-              <li><a href="#contact" className="hover:text-teal-700 transition-colors">Contact & Map</a></li>
+              <li><a href="#home" onClick={(e) => handleNav(e, 'home')} className="hover:text-teal-700 transition-colors">Home</a></li>
+              <li><a href="#services" onClick={(e) => handleNav(e, 'services')} className="hover:text-teal-700 transition-colors">Services</a></li>
+              <li><a href="#skills" onClick={(e) => handleNav(e, 'skills')} className="hover:text-teal-700 transition-colors">Tech Stack</a></li>
+              <li><a href="#gallery" onClick={(e) => handleNav(e, 'gallery')} className="hover:text-teal-700 transition-colors">Portfolio</a></li>
+              <li><a href="#support" onClick={(e) => handleNav(e, 'support')} className="hover:text-teal-700 transition-colors">AI Support</a></li>
+              <li><a href="#contact" onClick={(e) => handleNav(e, 'contact')} className="hover:text-teal-700 transition-colors">Contact & Map</a></li>
             </ul>
           </div>
 
@@ -47,11 +60,11 @@ export const Footer: React.FC = () => {
           <div className="lg:col-span-3 space-y-3 text-left">
             <h4 className="text-sm font-serif font-bold text-slate-900">Specialized Services</h4>
             <ul className="space-y-2">
-              <li className="hover:text-teal-700 transition-colors">WordPress Engineering & Maintenance</li>
-              <li className="hover:text-teal-700 transition-colors">Data Analytics & BI Dashboards</li>
-              <li className="hover:text-teal-700 transition-colors">Computer Infrastructure & Hosting</li>
-              <li className="hover:text-teal-700 transition-colors">Web Architecture & Enterprise Portals</li>
-              <li className="hover:text-teal-700 transition-colors">Custom AI Models & Gemini Chatbots</li>
+              <li><a href="#services" onClick={(e) => handleNav(e, 'services')} className="hover:text-teal-700 transition-colors block">WordPress & Elementor Engineering</a></li>
+              <li><a href="#services" onClick={(e) => handleNav(e, 'services')} className="hover:text-teal-700 transition-colors block">Data Analytics & BI Dashboards</a></li>
+              <li><a href="#services" onClick={(e) => handleNav(e, 'services')} className="hover:text-teal-700 transition-colors block">Computer Infrastructure & Hosting</a></li>
+              <li><a href="#services" onClick={(e) => handleNav(e, 'services')} className="hover:text-teal-700 transition-colors block">Web Architecture & Portals</a></li>
+              <li><a href="#services" onClick={(e) => handleNav(e, 'services')} className="hover:text-teal-700 transition-colors block">Custom AI Models & Gemini Chatbots</a></li>
             </ul>
           </div>
 
