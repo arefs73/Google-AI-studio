@@ -24,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenSupport, onOpenQuo
           <div className="lg:col-span-7 flex flex-col space-y-8 order-last lg:order-none mt-10 lg:mt-0">
             
             {/* 1. Header Group */}
-            <div className="space-y-6 text-left lg:w-[999px]">
+            <div className="space-y-6 text-left text-[17px] leading-[25px] lg:w-[800px] lg:mb-[32px] lg:ml-[67px]">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/80 text-teal-700 text-xs font-semibold shadow-sm">
                 <span className="flex h-2 w-2 rounded-full bg-teal-500 animate-pulse" />
                 <span>RF Craft • Next-Gen IT Solutions</span>
@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenSupport, onOpenQuo
             </div>
 
             {/* 2. Organized Services Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-[20px] pb-[24px] mb-[32px] px-0 border-y border-slate-200/60 w-full lg:w-[600px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-[20px] pb-[24px] mb-[32px] px-0 lg:pl-[62px] border-y border-slate-200/60 w-full lg:w-[600px]">
               {[
                 { icon: LineChart, label: 'Data Analytics & Power BI', page: 'services' },
                 { icon: Globe, label: 'Web & WordPress/Elementor', page: 'services' },
@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onNavigate, onOpenSupport, onOpenQuo
 
             {/* 3. CTAs & Trust Indicators */}
             <div className="flex flex-col space-y-6">
-              <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center gap-4 lg:w-[500px] lg:pl-[60px]">
                 <button
                   onClick={onOpenQuoteModal}
                   className="w-full sm:w-auto flex justify-center items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-sm bg-teal-600 hover:bg-teal-700 text-white shadow-lg shadow-teal-600/20 transition-all duration-300 hover:-translate-y-0.5 group"
